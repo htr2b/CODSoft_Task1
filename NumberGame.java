@@ -1,5 +1,3 @@
-package number;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,6 +17,10 @@ public class NumberGame {
 			while (attempt < maxAttempt && !isTrue) {
 				System.out.println("Enter your guess");
 				int playerGuess = sc.nextInt();
+				while(playerGuess<1 || playerGuess>100) {
+					System.out.println("Enter a number between 1-100");
+					playerGuess = sc.nextInt();
+				}
 				attempt++;
 				if (playerGuess == chosenNumber) {
 					System.out.println("You guessed the number right.");
@@ -45,3 +47,4 @@ public class NumberGame {
 
 	}
 }
+
